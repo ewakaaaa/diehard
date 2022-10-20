@@ -1,8 +1,10 @@
 # diehard
 Solving the DIEHARD - DIE HARD problem (https://www.spoj.com/problems/DIEHARD/) by reinforcement learning.
-The only intended policy of an agent is to go to "air" from another state.The decision about which state to go into from the "air" in the case of a random agent is random. In the case of the q-agent, the information is taken from the Q matrix representing the relationship between the reward and the state. 
-Process contains random elements (epsilon value when we allow an-agent to randomly act)
-Therefore, your results may be different.
+
+The only intended policy of an agent is to go to "air" from another state. The decision about which state to go into from the "air" in the case of a random agent is random. In the case of the q-agent, the information is taken from the Q-matrix representing the relationship between the next step and reward of doing this step.
+
+Process contains random elements (epsilon value when we allow q-agent to randomly act). Therefore, your results may be different.
+
 Examples of q-agent performance quality checks (summary.py): 
 ```bash
 test case: {'heath': 1, 'armor': 5, 'true': 1}
@@ -25,6 +27,6 @@ reward of RandomAgent: {'mean': 210.44, 'max': 243, 'min': 189}, time: 0:00:00.0
 reward of QLearningAgnet: {'mean': 356.44, 'max': 399, 'min': 299}, time: 0:00:14.008877
 ```
 Conclusions:
-- the larger the initial values, the worse the agent does, therefore the process gets longer and we assign the value of the reward to individual steps worse and worse (reward - taking a step)
-- no less, the maximum reward value always equals the real number of steps needed, so the agent has learned how to maximize the survival time! 
-- for the correct operation, it was necessary to add an earlier stop of the learning process to be able to save the optimal state of the Q matrix
+- The larger the initial values, the worse the agent does, therefore the process gets longer and we assign the value of the reward to individual steps worse and worse (reward - taking a step)
+- No less, the maximum reward value always equals the real number of steps needed, so the agent has learned how to maximize the survival time! 
+- For the correct operation, it was necessary to add an earlier stop of the learning process to be able to save the optimal state of the Q matrix
